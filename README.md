@@ -1,1 +1,1 @@
-Web development internship at # CODSOFT
+It's a landing page for healthy food recipes.
