@@ -1,1 +1,161 @@
-Enter file contents here
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="port.css">
+</head>
+<body>
+    <header>
+        <img src="profilepic.jpg" alt="Profile Picture">
+        <h1>Dharani Kadali</h1>
+        <p>Student</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Motivated and ambitious student with a strong work ethic, excellent communication skills, and a 
+            passion for learning. Eager to gain real-world experience and develop new skills.</p>
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <a href="DharaniKadali_Resume.pdf" open><button>Open Resume</button></a>
+    </section>
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <img src="certificate1.png" alt="certification1">
+        <img src="certificate2.png" alt="certification2">
+    </section>
+
+    <section id="projects">
+        <h2>Recent Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <a href="https://github.com/DharaniKadali/java-word-counter">
+                 <img src="project1.png" alt="Project 1 Image">
+                </a>
+                  <h3>Java Word Counter</h3>
+                <p>Created a word counter application with extra features like vowel and consonant count using java.</p>
+            </div>
+            <div class="project">
+                <a href="http://127.0.0.1:5500/f.html">
+                 <img src="project2.jpg" alt="Project 2 Image">
+                </a>
+                  <h3>Landing Page</h3>
+                <p>Created a landing page for healthy food recipes by HealthyEats using html and css.</p>
+            </div>
+            <div class="project">
+                <a href="http://127.0.0.1:5500/calculator.html">
+                 <img src="calcu.jpeg" alt="Project 3 Image">
+                </a>
+                  <h3>Calculator</h3>
+                <p>A user-friendly calculator which performs arithmetic operations using HTML,CSS,JavaScript.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <img src="html.jpeg" alt="Skill 1 Image">
+                <h3>HTML</h3>
+            </div>
+            <div class="skill">
+                <img src="css.jpeg" alt="Skill 2 Image">
+                <h3>CSS</h3>
+            </div>
+            <div class="skill">
+                <img src="js.jpeg" alt="Skill 3 Image">
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill">
+                <img src="java.jpeg" alt="Skill 4 Image">
+                <h3>Java</h3>
+            </div>
+            <div class="skill">
+                <img src="python.jpeg" alt="Skill 5 Image">
+                <h3>Python</h3>
+            </div>
+            <div class="skill">
+                <img src="mysql.png" alt="Skill 6 Image">
+                <h3>MySql</h3>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+          <p>phno:+917416726999</p>
+          <p>Email: dharanikadali43@gmail.com</p>
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/dharani-kadali-84000226a/">
+                <img src="linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/DharaniKadali">
+                <img src="github.png" alt="GitHub">
+            </a>
+            <a href="https://www.hackerrank.com/profile/dharanikadali43">
+                <img src="hackerrank.png" alt="HackerRank">
+            </a>
+        </div>
+    </section>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth Scrolling for Navigation Links
+            document.querySelectorAll('nav ul li a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        
+            //form validation
+            const contactForm = document.querySelector('form');
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+        
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+        
+                if (name === '' || email === '' || message === '') {
+                    alert('Please fill out all fields.');
+                    return;
+                }
+        
+                if (!validateEmail(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                alert('Thank you for your message!');
+                contactForm.reset();
+            });
+        
+            function validateEmail(email) {
+                const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                return re.test(String(email).toLowerCase());
+            }
+        });
+        </script>
+
+    <footer>
+        <p>&copy; 2024 @Dharani Kadali. All rights reserved.</p>
+    </footer>
+</body>
+</html>
