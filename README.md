@@ -1,1 +1,1 @@
-It's a landing page for healthy food recipes.
+created webpages while working with codsoft using html,css and Javascript 
